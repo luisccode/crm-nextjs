@@ -1,0 +1,21 @@
+{
+  "name": "crm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "formik": "^2.1.7",
+    "json-server": "^0.16.2",
+    "next": "9.5.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "sweetalert2": "^10.3.5",
+    "uuid": "^8.3.1",
+    "yup": "^0.29.3"
+  }
+}

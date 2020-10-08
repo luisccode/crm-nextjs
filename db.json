@@ -1,0 +1,110 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Luis Cortes",
+      "email": "admin@admin.com",
+      "password": "1234",
+      "role": "seller",
+      "clients": [
+        {
+          "id": "2"
+        },
+        {
+          "id": "3"
+        }
+      ],
+      "numberSales": 2
+    },
+    {
+      "id": 2,
+      "name": "Marta Peres",
+      "email": "marta@admin.com",
+      "password": "1234",
+      "role": "seller",
+      "clients": [
+        {
+          "id": "4"
+        }
+      ],
+      "numberSales": 2
+    },
+    {
+      "id": 4,
+      "name": "Darlene Brown",
+      "email": "darlene@gmail.com",
+      "password": "1234",
+      "company": "Tesla",
+      "role": "client",
+      "sellerId": 1
+    },
+    {
+      "id": 5,
+      "name": "Pedro",
+      "email": "pedro@gmail.com",
+      "password": "1234",
+      "company": "Intel",
+      "role": "client",
+      "sellerId": 2
+    },
+    {
+      "id": 6,
+      "name": "Juan",
+      "email": "juan@gmail.com",
+      "password": "1234",
+      "company": "Intel",
+      "role": "client",
+      "sellerId": 2
+    },
+    {
+      "id": "0922f0e7-a12d-4b4c-bac1-7395071ed5f7",
+      "name": "John Doe",
+      "company": "ABC Company",
+      "email": "jhon@gmail.com",
+      "password": "1234",
+      "role": "client",
+      "sellerId": 1
+    },
+    {
+      "name": "Carl Jhonson",
+      "company": "carl@gmail.com",
+      "email": "carl@gmail.com",
+      "password": "1234",
+      "id": "beb21503-8d36-4239-8493-ec4b042e12d3",
+      "role": "client",
+      "sellerId": 1
+    }
+  ],
+  "products": [
+    {
+      "name": "Laptop acer",
+      "price": "500",
+      "id": 1
+    },
+    {
+      "name": "Headphones",
+      "price": "100",
+      "id": 2
+    }
+  ],
+  "orders": [
+    {
+      "products": [
+        {
+          "id": 1,
+          "amount": 500,
+          "units": 1,
+          "clientId": 4
+        },
+        {
+          "id": 2,
+          "amount": 100,
+          "units": 1,
+          "clientId": 4
+        }
+      ],
+      "total": 600,
+      "clientId": 4
+    }
+  ]
+}
