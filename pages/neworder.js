@@ -24,7 +24,7 @@ const NewClient = () => {
   }, []);
   const formik = useFormik({
     initialValues: {
-      client: "",
+      clientId: "",
       productId: "",
       total: "",
       status: "",
@@ -33,9 +33,25 @@ const NewClient = () => {
       total: Yup.string().required("Price is required"),
     }),
     onSubmit: async (valores) => {
-      console.log("ejecuta");
-      console.log(valores);
+      const product = products.filter(
+        (product) => product.id === valores.productId
+      )[0];
       try {
+        const order = {
+          id: uuidv4(),
+          products: [product],
+          total: valores.total,
+          clientId: valores.clientId,
+          clientName: "",
+          status: valores.status,
+        };
+        const respose = await axiosClient.post("orders", order);
+        console.log(respose);
+        Swal.fire("Added!", "Your  order has been added", "success").then(
+          (res) => {
+            if (res.value) router.push("/orders");
+          }
+        );
       } catch (error) {
         console.log(error);
         Swal.fire("Oops...", "Something went wrong!", "error");
@@ -45,7 +61,7 @@ const NewClient = () => {
   if (clients.length === 0) return null;
   return (
     <Layout>
-      <h1 className="text-2xl text-gray-800 font-light">New Client</h1>
+      <h1 className="text-2xl text-gray-800 font-light">New Order</h1>
 
       <div className="flex justify-center mt-5">
         <div className="w-full max-w-lg">
@@ -53,16 +69,21 @@ const NewClient = () => {
             className="bg-white shadow-md px-8 pt-6 pb-8 mb-4"
             onSubmit={formik.handleSubmit}
           >
+            <div className="mt-2 uppercase tracking-wide text-c2 ">Client:</div>
             <select
               className="mt-2 appearance-none bg-blue-600 border border-blue-600 text-white p-2 text-center rounded leading-tight focus:outline-none focus:bg-blue-600 focus:border-blue-500 uppercase text-xs font-bold "
-              id="client"
+              id="clientId"
               onChange={formik.handleChange}
-              value={formik.values.client}
+              value={formik.values.clientId}
             >
               {clients.map((client) => (
-                <option value={client.name}>{client.name}</option>
+                <option value={client.id}>{client.name}</option>
               ))}
             </select>
+
+            <div className="mt-2 uppercase tracking-wide text-c2 ">
+              Product:
+            </div>
             <select
               className="mt-2 appearance-none bg-blue-600 border border-blue-600 text-white p-2 text-center rounded leading-tight focus:outline-none focus:bg-blue-600 focus:border-blue-500 uppercase text-xs font-bold "
               id="productId"
@@ -99,7 +120,12 @@ const NewClient = () => {
             ) : null}
 
             <div className="mt-2 uppercase tracking-wide text-c2 ">Status:</div>
-            <select className="mt-2 appearance-none bg-blue-600 border border-blue-600 text-white p-2 text-center rounded leading-tight focus:outline-none focus:bg-blue-600 focus:border-blue-500 uppercase text-xs font-bold ">
+            <select
+              className="mt-2 appearance-none bg-blue-600 border border-blue-600 text-white p-2 text-center rounded leading-tight focus:outline-none focus:bg-blue-600 focus:border-blue-500 uppercase text-xs font-bold "
+              id="status"
+              onChange={formik.handleChange}
+              value={formik.values.status}
+            >
               <option value="complete">Complete</option>
               <option value="pending">Pending</option>
               <option value="canceled">Canceled</option>
