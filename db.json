@@ -77,14 +77,20 @@
   ],
   "products": [
     {
+      "id": 1,
       "name": "Laptop acer",
       "price": "500",
-      "id": 1
+      "available": 10,
+      "weight": "1kg",
+      "solds": 1
     },
     {
+      "id": 2,
       "name": "Headphones",
       "price": "100",
-      "id": 2
+      "available": 80,
+      "weight": "50g",
+      "solds": 1
     }
   ],
   "orders": [
@@ -92,19 +98,23 @@
       "products": [
         {
           "id": 1,
+          "name": "Laptop acer",
           "amount": 500,
           "units": 1,
           "clientId": 4
         },
         {
           "id": 2,
+          "name": "Headphones",
           "amount": 100,
           "units": 1,
           "clientId": 4
         }
       ],
       "total": 600,
-      "clientId": 4
+      "clientId": 4,
+      "name": "Darlene Brown"
     }
   ]
 }
+

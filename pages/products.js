@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import axiosClient from "../config/axios";
+import Product from "../components/Product";
 
 export default function Products() {
-  const router = useRouter();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axiosClient.get("products").then((res) => {
+      setProducts(res.data);
+    });
+  }, []);
   return (
     <Layout>
       <h1 className="text-2xl text-gray-800 font-light">Products</h1>
@@ -27,7 +33,11 @@ export default function Products() {
             </tr>
           </thead>
 
-          <tbody className="bg-white"></tbody>
+          <tbody className="bg-white">
+            {products.map((product) => (
+              <Product key={product.id} data={product} />
+            ))}
+          </tbody>
         </table>
       </div>
     </Layout>
