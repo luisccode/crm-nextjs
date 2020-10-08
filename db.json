@@ -91,10 +91,19 @@
       "available": 80,
       "weight": "50g",
       "solds": 1
+    },
+    {
+      "name": "Oculus lents",
+      "price": "200",
+      "available": "3",
+      "weight": "100g",
+      "solds": "2",
+      "id": "98429dbe-6ce3-41d1-92f3-67b7614fc4a4"
     }
   ],
   "orders": [
     {
+      "id": "3122",
       "products": [
         {
           "id": 1,
@@ -113,8 +122,8 @@
       ],
       "total": 600,
       "clientId": 4,
-      "name": "Darlene Brown"
+      "clientName": "Darlene Brown",
+      "status": "complete"
     }
   ]
 }
-

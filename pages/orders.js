@@ -4,7 +4,7 @@ import Link from "next/link";
 import axiosClient from "../config/axios";
 import Order from "../components/Order";
 
-export default function Products() {
+export default function Orders() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -12,7 +12,6 @@ export default function Products() {
       setOrders(res.data);
     });
   }, []);
-  console.log(orders);
   return (
     <Layout>
       <h1 className="text-2xl text-gray-800 font-light">Orders</h1>
@@ -22,11 +21,9 @@ export default function Products() {
         </a>
       </Link>
       <div className="flex flex-wrap justify-around mt-4">
-        <Order />
-        <Order />
-        <Order />
-        <Order />
-        <Order />
+        {orders.map((order) => (
+          <Order key={order.id} data={order} />
+        ))}
       </div>
     </Layout>
   );
