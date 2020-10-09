@@ -7,7 +7,8 @@ const Header = () => {
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("userData")));
   }, []);
-  if (Object.keys(user).length === 0) return null;
+
+  if (!user || Object.keys(user).length === 0) return null;
 
   const handleClick = () => {
     localStorage.setItem("isAuth", "false");
