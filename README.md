@@ -1,27 +1,35 @@
-# Como instalarlo
+# Install dependencies
+
+`cd crm-nextjs`
 
 `yarn`
 
-o
+or
 
 `npm install`
 
-## Para ejecutarlo
+### Install json-server globaly
 
-posicionarse en la carpeta
+`npm install -g json-server`
+or
+`yarn global add json-server`
 
-ejecutar json server( la api falsa )
+## Start the project
 
 `json-server db.json --port 4000`
 
-luego
+then run
 
 `yarn build`
-y
+
+and
+
 `yarn start`
 
-### Credenciales para ingresar: 
+### admin credentials:
 
-admin@admin
+Email:
+admin@admin.com
 
+Password:
 1234
