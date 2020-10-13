@@ -1,5 +1,7 @@
 # Install dependencies
 
+To run this project you need to install [yarn](https://classic.yarnpkg.com/en/docs/install/) or [npm](https://www.npmjs.com/get-npm) and then run the following commands.
+
 `cd crm-nextjs`
 
 `yarn`
@@ -20,13 +22,13 @@ or
 
 `json-server db.json --port 4000`
 
-then run
+then open a new terminal and run
 
-`yarn build`
+`yarn build & yarn start`
 
-and
+or
 
-`yarn start`
+`npm run build & npm start`
 
 ### admin credentials:
 

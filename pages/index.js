@@ -3,7 +3,6 @@ import Layout from '../components/Layout';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Client from '../components/Client';
-import axiosClient from '../config/axios';
 import { getCurrentSeller, getClients } from '../helpers';
 
 export default function Home() {

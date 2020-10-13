@@ -108,35 +108,36 @@
       "weight": "100g",
       "solds": "2",
       "id": "98429dbe-6ce3-41d1-92f3-67b7614fc4a4"
+    },
+    {
+      "name": "Iphone x",
+      "price": "500",
+      "available": "50",
+      "weight": "100g",
+      "solds": "0",
+      "id": "ddb048aa-d26c-427b-8437-8b551d8be9f4"
+    },
+    {
+      "name": "Mouse",
+      "price": "5",
+      "available": "100",
+      "weight": "10g",
+      "solds": "3",
+      "id": "297995b2-57e5-41d9-9c17-7931146c3014"
     }
   ],
   "orders": [
     {
-      "id": "3122",
+      "id": "ed4b8dac-bd2a-4d98-bbe1-3c3c3a801a1f",
       "products": [
         {
-          "id": 1,
+          "id": "1",
           "name": "Laptop acer",
-          "amount": 500,
-          "units": 1,
-          "clientId": 4
+          "price": "500",
+          "available": 10,
+          "weight": "1kg",
+          "solds": 1
         },
-        {
-          "id": 2,
-          "name": "Headphones",
-          "amount": 100,
-          "units": 1,
-          "clientId": 4
-        }
-      ],
-      "total": 600,
-      "clientId": 4,
-      "clientName": "Darlene Brown",
-      "status": "complete"
-    },
-    {
-      "id": "456fed4b-7957-4cb5-9c53-b651e405e567",
-      "products": [
         {
           "id": "2",
           "name": "Headphones",
@@ -146,14 +147,32 @@
           "solds": 1
         }
       ],
-      "total": "424",
-      "clientId": "0922f0e7-a12d-4b4c-bac1-7395071ed5f7",
-      "clientName": "",
-      "status": "pending"
+      "total": "600",
+      "clientName": "Carl Jhonson",
+      "status": {
+        "value": "completed",
+        "label": "Completado"
+      }
     },
     {
-      "id": "bceeb9b7-79dd-4ec6-83bd-65fbb66c18d7",
+      "id": "15948e32-02e2-4edc-b5ac-076488a4ecdb",
       "products": [
+        {
+          "name": "Iphone x",
+          "price": "500",
+          "available": "50",
+          "weight": "100g",
+          "solds": "0",
+          "id": "ddb048aa-d26c-427b-8437-8b551d8be9f4"
+        },
+        {
+          "id": "2",
+          "name": "Headphones",
+          "price": "100",
+          "available": 80,
+          "weight": "50g",
+          "solds": 1
+        },
         {
           "name": "Oculus lents",
           "price": "200",
@@ -163,10 +182,77 @@
           "id": "98429dbe-6ce3-41d1-92f3-67b7614fc4a4"
         }
       ],
-      "total": "200",
-      "clientId": "beb21503-8d36-4239-8493-ec4b042e12d3",
-      "clientName": "",
-      "status": "pending"
+      "total": "800",
+      "clientName": "Darlene Brown",
+      "status": {
+        "value": "pending",
+        "label": "Pendiente"
+      }
+    },
+    {
+      "id": "b6857892-da05-4537-814f-42bb8f16a117",
+      "products": [
+        {
+          "id": "1",
+          "name": "Laptop acer",
+          "price": "500",
+          "available": 10,
+          "weight": "1kg",
+          "solds": 1
+        },
+        {
+          "name": "Iphone x",
+          "price": "500",
+          "available": "50",
+          "weight": "100g",
+          "solds": "0",
+          "id": "ddb048aa-d26c-427b-8437-8b551d8be9f4"
+        }
+      ],
+      "total": "1000",
+      "clientName": "John Doe",
+      "status": {
+        "value": "canceled",
+        "label": "Cancelado"
+      }
+    },
+    {
+      "id": "6390677f-19e1-4ddf-b549-fe4848000119",
+      "products": [
+        {
+          "id": "1",
+          "name": "Laptop acer",
+          "price": "500",
+          "available": 10,
+          "weight": "1kg",
+          "solds": 1
+        }
+      ],
+      "total": "500",
+      "clientName": "martin",
+      "status": {
+        "value": "completed",
+        "label": "Completado"
+      }
+    },
+    {
+      "id": "a1ea4368-d685-4476-ab70-ce856eb46eef",
+      "products": [
+        {
+          "name": "Mouse",
+          "price": "5",
+          "available": "100",
+          "weight": "10g",
+          "solds": "3",
+          "id": "297995b2-57e5-41d9-9c17-7931146c3014"
+        }
+      ],
+      "total": "5",
+      "clientName": "Darlene Brown",
+      "status": {
+        "value": "canceled",
+        "label": "Cancelado"
+      }
     }
   ]
 }

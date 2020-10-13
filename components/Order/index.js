@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axiosClient from '../../config/axios';
+import Select from 'react-select';
 
 const Order = ({ data }) => {
     const { products, clientName, status, total, id } = data;
@@ -13,20 +14,25 @@ const Order = ({ data }) => {
                 ...data,
                 status: value,
             });
-            console.log(response);
         } catch (error) {
             console.log(error);
         }
     };
 
+    const options = [
+        { value: 'completed', label: 'Completado' },
+        { value: 'pending', label: 'Pendiente' },
+        { value: 'canceled', label: 'Cancelado' },
+    ];
+
     return (
-        <div className="overflow-hidden shadow-lg border-t-4 bg-white mb-4 mx-2 rounded-b-lg rounded-t border-red-light w-auto">
+        <div className="shadow-lg border-t-4 bg-white mb-4 rounded-b-lg rounded-t border-red-light w-auto md:w-2/5 lg:w-1/4 lg:mx-1">
             <div className="px-6 py-4 mb-2 mt-4 mb-8">
-                <div className="uppercase tracking-wide text-c2 mb-2">Productos</div>
+                <div className="capitalize tracking-wide text-c2 mb-2">Productos</div>
                 {products.map((product, index) => {
                     if (index === products.length)
                         return (
-                            <div className="flex  border px-4 py-2 text-lg text-grey-darkest border-b-0">
+                            <div className="flex border px-4 py-2 text-lg text-grey-darkest border-b-0">
                                 <div className="pl-2">{product.name}</div>
                             </div>
                         );
@@ -37,20 +43,17 @@ const Order = ({ data }) => {
                             </div>
                         );
                 })}
-                <div className="mt-4 uppercase tracking-wide text-c2 mb-2">
-                    Clientes:
+                <div className="mt-4 capitalize  tracking-wide text-c2 mb-2">
+                    Cliente:
                     <span className="capitalize text-grey-darkest">{' ' + clientName}</span>
                 </div>
-                <div className="mt-2 uppercase tracking-wide text-c2 ">Status:</div>
-                <select
-                    className="mt-2 appearance-none bg-blue-600 border border-blue-600 text-white p-2 text-center rounded leading-tight focus:outline-none focus:bg-blue-600 focus:border-blue-500 uppercase text-xs font-bold "
-                    value={orderStatus}
-                    onChange={(e) => handleChange(e.target.value)}
-                >
-                    <option value="complete">Completo</option>
-                    <option value="pending">Pendiente</option>
-                    <option value="canceled">Cancelada</option>
-                </select>
+                <div className="my-2 capitalize tracking-wide text-c2 ">Status:</div>
+
+                <Select
+                    defaultValue={orderStatus}
+                    options={options}
+                    onChange={(e) => handleChange(e)}
+                />
                 <div className="mt-2 uppercase tracking-wide text-c2 ">Total: {total}</div>
             </div>
         </div>
