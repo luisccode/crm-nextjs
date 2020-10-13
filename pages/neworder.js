@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { v4 as uuidv4 } from 'uuid';
 import axiosClient from '../config/axios';
 import Swal from 'sweetalert2';
-import { getCurrentSeller, getClients } from '../helpers';
+import { getCurrentSeller, getClients, statusOptions } from '../helpers';
 import Select from 'react-select';
 
 const NewClient = () => {
@@ -14,16 +14,11 @@ const NewClient = () => {
     const [products, setProducts] = useState([]);
     const [data, setData] = useState({});
 
-    const optionsStatus = [
-        { value: 'completed', label: 'Completado' },
-        { value: 'pending', label: 'Pendiente' },
-        { value: 'canceled', label: 'Cancelado' },
-    ];
-    const optionsClients = clients.map((client) => ({
+    const clientOptions = clients.map((client) => ({
         label: client.name,
         value: client.name,
     }));
-    const optionsProducts = products.map((product) => ({
+    const productOpstions = products.map((product) => ({
         label: product.name,
         value: product.id,
     }));
@@ -59,7 +54,6 @@ const NewClient = () => {
             Swal.fire('Oops...', 'Something went wrong!', 'error');
         }
     };
-    if (clients.length === 0) return null;
     return (
         <Layout>
             <h1 className="text-2xl text-gray-800 font-light">Nueva Orden</h1>
@@ -72,14 +66,14 @@ const NewClient = () => {
                     >
                         <div className="block text-gray-700 text-sm font-bold my-2">Cliente:</div>
                         <Select
-                            options={optionsClients}
+                            options={clientOptions}
                             onChange={(e) => setData((prev) => ({ ...prev, client: e }))}
                         />
 
                         <div className="block text-gray-700 text-sm font-bold my-2">Productos:</div>
                         <Select
                             isMulti
-                            options={optionsProducts}
+                            options={productOpstions}
                             className="basic-multi-select"
                             classNamePrefix="select"
                             onChange={(e) => setData((prev) => ({ ...prev, productsId: e }))}
@@ -105,7 +99,7 @@ const NewClient = () => {
                         </div>
                         <div className="block text-gray-700 text-sm font-bold my-2">Status:</div>
                         <Select
-                            options={optionsStatus}
+                            options={statusOptions}
                             onChange={(e) => setData((prev) => ({ ...prev, status: e }))}
                         />
 

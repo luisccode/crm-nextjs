@@ -7,3 +7,8 @@ export const getCurrentSeller = () => JSON.parse(localStorage.getItem('userData'
 export const getClients = (sellerId) => {
     return axiosClient.get(`/users?role=client&sellerId=${sellerId}`);
 };
+export const statusOptions = [
+    { value: 'completed', label: 'Completado' },
+    { value: 'pending', label: 'Pendiente' },
+    { value: 'canceled', label: 'Cancelado' },
+];

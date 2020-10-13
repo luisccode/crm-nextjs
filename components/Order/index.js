@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axiosClient from '../../config/axios';
 import Select from 'react-select';
+import { statusOptions } from '../../helpers';
 
 const Order = ({ data }) => {
     const { products, clientName, status, total, id } = data;
@@ -19,29 +20,29 @@ const Order = ({ data }) => {
         }
     };
 
-    const options = [
-        { value: 'completed', label: 'Completado' },
-        { value: 'pending', label: 'Pendiente' },
-        { value: 'canceled', label: 'Cancelado' },
-    ];
+    const borderColor =
+        orderStatus.value === 'completed'
+            ? `border-green-400`
+            : orderStatus.value === 'pending'
+            ? `border-orange-400`
+            : `border-red-600`;
 
     return (
-        <div className="shadow-lg border-t-4 bg-white mb-4 rounded-b-lg rounded-t border-red-light w-auto md:w-2/5 lg:w-1/4 lg:mx-1">
+        <div
+            className={`shadow-lg border-t-4 bg-white mb-8 rounded-b-lg rounded-t ${borderColor} w-3/4 md:w-2/5 lg:w-1/4 lg:mx-1`}
+        >
             <div className="px-6 py-4 mb-2 mt-4 mb-8">
                 <div className="capitalize tracking-wide text-c2 mb-2">Productos</div>
                 {products.map((product, index) => {
-                    if (index === products.length)
-                        return (
-                            <div className="flex border px-4 py-2 text-lg text-grey-darkest border-b-0">
-                                <div className="pl-2">{product.name}</div>
-                            </div>
-                        );
-                    else
-                        return (
-                            <div className="flex  border px-4 py-2 text-lg text-grey-darkest">
-                                <div className="pl-2">{product.name}</div>
-                            </div>
-                        );
+                    const border = index === products.length ? `border-b-0"` : ``;
+                    return (
+                        <div
+                            key={index}
+                            className={`flex border px-4 py-2 text-lg text-grey-darkest ${border}`}
+                        >
+                            <div className="pl-2">{product.name}</div>
+                        </div>
+                    );
                 })}
                 <div className="mt-4 capitalize  tracking-wide text-c2 mb-2">
                     Cliente:
@@ -51,7 +52,7 @@ const Order = ({ data }) => {
 
                 <Select
                     defaultValue={orderStatus}
-                    options={options}
+                    options={statusOptions}
                     onChange={(e) => handleChange(e)}
                 />
                 <div className="mt-2 uppercase tracking-wide text-c2 ">Total: {total}</div>

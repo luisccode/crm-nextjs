@@ -185,8 +185,8 @@
       "total": "800",
       "clientName": "Darlene Brown",
       "status": {
-        "value": "pending",
-        "label": "Pendiente"
+        "value": "canceled",
+        "label": "Cancelado"
       }
     },
     {
@@ -212,8 +212,8 @@
       "total": "1000",
       "clientName": "John Doe",
       "status": {
-        "value": "canceled",
-        "label": "Cancelado"
+        "value": "pending",
+        "label": "Pendiente"
       }
     },
     {
