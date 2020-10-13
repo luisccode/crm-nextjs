@@ -8,10 +8,12 @@ or
 
 `npm install`
 
-### Install json-server globaly
+## Install json-server globaly
 
 `npm install -g json-server`
+
 or
+
 `yarn global add json-server`
 
 ## Start the project

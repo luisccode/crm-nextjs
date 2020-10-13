@@ -14,6 +14,10 @@
     "next": "9.5.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-redux": "^7.2.1",
+    "react-thunk": "^1.0.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "sweetalert2": "^10.3.5",
     "uuid": "^8.3.1",
     "yup": "^0.29.3"

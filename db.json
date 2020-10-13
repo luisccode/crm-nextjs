@@ -32,7 +32,7 @@
     {
       "id": 4,
       "name": "Darlene Brown",
-      "email": "darlene@gmail.com",
+      "email": "darlenebr@gmail.com",
       "password": "1234",
       "company": "Tesla",
       "role": "client",
@@ -71,6 +71,15 @@
       "email": "carl@gmail.com",
       "password": "1234",
       "id": "beb21503-8d36-4239-8493-ec4b042e12d3",
+      "role": "client",
+      "sellerId": 1
+    },
+    {
+      "name": "martin",
+      "company": "Merida Tech",
+      "email": "martin@admin.com",
+      "password": "1234",
+      "id": "45aa42ba-d9d9-44f0-a0f0-d3b7a3bade21",
       "role": "client",
       "sellerId": 1
     }
@@ -140,7 +149,24 @@
       "total": "424",
       "clientId": "0922f0e7-a12d-4b4c-bac1-7395071ed5f7",
       "clientName": "",
-      "status": "canceled"
+      "status": "pending"
+    },
+    {
+      "id": "bceeb9b7-79dd-4ec6-83bd-65fbb66c18d7",
+      "products": [
+        {
+          "name": "Oculus lents",
+          "price": "200",
+          "available": "3",
+          "weight": "100g",
+          "solds": "2",
+          "id": "98429dbe-6ce3-41d1-92f3-67b7614fc4a4"
+        }
+      ],
+      "total": "200",
+      "clientId": "beb21503-8d36-4239-8493-ec4b042e12d3",
+      "clientName": "",
+      "status": "pending"
     }
   ]
 }
